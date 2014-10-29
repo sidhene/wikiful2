@@ -7,8 +7,29 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<div class="container">
+	  <div class="row">
+		  <div class="col-md-9"><%= yield %></div> 
+	  
+		  <div class="col-md-3 sidebar">
+			  	 <div class="my-wiki-site">
+	  	 	        <h4>My Wikiful</h4>
+	  	 	     </div>
+	  	<ul>
+          <li><%= link_to "Write a Wiki", new_article_path %></li>
+        </ul>
+	  	  </div>
+	  	  <div class="categories-sidebar">
+	  	  </div>
+	  	  <h4>Categories</h4>
+	  	   <ul>
+              <% @categories.each do |category| %>
+                <li><%= link_to category.name, category %></li>
+              <% end %>
 
-<%= yield %>
 
+
+	  </div>
+</div>
 </body>
 </html>
