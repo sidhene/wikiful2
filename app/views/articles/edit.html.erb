@@ -1,0 +1,17 @@
+<h1>Edit Your Article</h1>
+<% if @article.errors.any? %>
+<div class="error_messages">
+   <h2>You're missing some fields</h2>
+   <ul>
+     <% @article.errors.full_messages.each do |message| %>
+       <li><%= message %></li>
+     <% end %>
+   </ul>
+ </div>
+<% end %>
+
+<!-- How 'new article' does it -->
+<%= render :partial => 'form' %>
+
+<!-- How Website One does it -->
+<!-- <%= render 'form', article: @article %> -->
